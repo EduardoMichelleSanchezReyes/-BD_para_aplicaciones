@@ -1,0 +1,33 @@
+Consultas hospital
+Consulta 1
+Select (select nombre from persona) from empleado where idtipoempleado=4 and idcargo=3 and iddepedencia=5;
+
+Consulta 2
+
+Select (select nombre from persona) from empleado inner join usuario inner join permisosxusuario where idpermiso=5 and idtipoempleado=2 and iddependencia =8;
+
+Consulta 3
+
+Select (select nombre from persona), factura.id, fechadepago from paciente inner join historiaclinica inner join tratamiento inner join factura inner join pago where tratamiento.id = 6 and valor>5000;
+
+Consulta 4
+
+Select (select nombre from persona) from paciente inner join historiaclinica inner join tratamiento inner join factura inner join pago where tratamiento.id=6 and valor between 2500 and 6000 and idformadepago=(select id from formadepago where nombre=”efectivo”);
+
+Consulta 5
+
+Select (select nombre from persona) from paciente inner join historiaclinica inner join tratamiento inner join factura inner join pago inner join dieta where taratamiento.id=12 and valor > 1000 and fechadepago=”30/03/2015” and dieta.id=15;
+
+Consulta 6
+
+Select (select nombre from persona) from paciente inner join historiaclinica inner join examen inner noin dieta inner join resultado where feachaentrega=”25/08/2016” and dieta.id=8;
+
+Consulta 7
+Select (select nombre from persona) from paciente inner join historiaclinica inner join tratamiento inner join dieta where tratamiento.id=5 and idformadepago=(select id from formadepago where nombre=”tarjeta de crédito”) and dieta.id=11;
+
+Consulta 8
+Select avg(valor) from pago inner join factura inner join paciente inner join historiaclinica inner join dieta where dieta.id=3 and idformadepago=(select id from formadepago where nombre=”cheque”);
+
+Consulta 9
+Select avg(valor) from pago inner join factura inner join paciente inner join historiaclinica inner join dieta inner join examen where idtipoexamen=16 and dieta.id=4;
+
